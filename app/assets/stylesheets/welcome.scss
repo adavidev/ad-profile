@@ -1,0 +1,54 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$orange: #F29418; 
+
+.primary-panel {
+	margin: 100px;
+	border-radius: 0px;
+	box-shadow: 0px 0px 70px rgba(0, 0, 0, .4);
+	border:0px;
+	position: relative;
+
+	.panel-body{
+		padding: 0;
+	}
+
+	.header-stuff {
+		height:250px;
+		width: 100%;
+		background-image: image-url("prague.jpg");
+		background-size: cover;
+		background-position: 20% 0;
+	}
+}
+
+.right-panel {
+	background-color: #161F26;
+	padding: 20px;
+}
+
+.left-panel {
+	/*padding: 20px;*/
+	padding-right: 0;
+}
+
+.page-content {
+	padding: 15px;
+}
+
+body {
+	background-color: #463A6C;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.orange{
+	background-color: #F29418;
+}
