@@ -2,14 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$orange: #F29418; 
+$orange: #F09419; 
+$gray-text: #5A6B75;
+$light-text: #D2DDE3;
+$blue-icon: #1A73AD;
+
+.pad-top {
+	margin-top: 100px;
+}
 
 .primary-panel {
-	margin: 100px;
+	margin-left: 0px;
 	border-radius: 0px;
 	box-shadow: 0px 0px 70px rgba(0, 0, 0, .4);
 	border:0px;
 	position: relative;
+	margin-left:-30px;
+	margin-right:-15px;
 
 	.panel-body{
 		padding: 0;
@@ -18,15 +27,164 @@ $orange: #F29418;
 	.header-stuff {
 		height:250px;
 		width: 100%;
-		background-image: image-url("prague.jpg");
+		background-image: image-url("sanfran.jpg");
 		background-size: cover;
-		background-position: 20% 0;
+		background-position: 0 69%;
+	}
+	
+	.article {
+		padding:0 20%;
+		padding-top:25px;
+		.title {
+			padding-bottom: 10px;
+			color: black;
+			font-size:30px;
+		}
+		.fulltext {
+			font-size:14px;
+			color:$gray-text;
+		}
+		.name {
+			color:$orange;
+			padding-bottom: 20px;
+			font-size: 12px;
+			font-weight: bold;
+			font-style: italic;
+		}
+		.time {
+			color:$orange;
+			font-size:12px;
+			font-weight: normal;
+		}
+		
 	}
 }
 
 .right-panel {
+	display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 	background-color: #161F26;
 	padding: 20px;
+	color: $gray-text;
+	font-family: 'Libre Baskerville', serif;
+	position:relative;
+	
+	.col-title {
+		color: $orange;
+		font-size:18px;
+		padding-top:2px;
+	}
+	
+	.post {
+		padding-top:25px;
+		
+		.timeline-dot{
+			position:absolute;
+			left: -16px;
+			margin-top:3px;
+			z-index:2;
+			height:14px;
+			width:14px;
+			
+			.timeline-inner{
+				height:14px;
+				width:14px;
+				background: $blue-icon;
+				border-radius:50%;
+				border:3px solid #161F26;
+				z-index:2;
+			}
+			
+			&.old .timeline-inner {
+				background: $gray-text;
+			}
+		}
+		
+		.title {
+			padding-bottom: 10px;
+			color: $light-text;
+			font-size:16px;
+		}
+		.description {
+			font-size:12px;
+		}
+		.name {
+			padding-top: 10px;
+			font-size: 12px;
+			font-weight: bold;
+			font-style: italic;
+		}
+		.time {
+			font-size:12px;
+			font-weight: normal;
+		}
+		
+		&.selected {
+			.title {
+				color: $orange;
+			}
+			.description {
+				color: $light-text;
+			}
+			.name {
+				color:$orange;
+			}
+			
+			.timeline-dot{
+				position:absolute;
+				left: -23px;
+				margin-top:0px;
+				z-index:2;
+				height:25px;
+				width:25px;
+				background: #161F26;
+				
+				.timeline-inner{
+					height:16px;
+					width:16px;
+					margin-top:4px;
+					margin-left:6px;
+					background: $orange;
+					border-radius:50%;
+					border:4px solid #161F26;
+					box-shadow: 0 0 3px #ddd;
+					z-index:2;
+				}
+			}
+		}
+	}
+	.timeline {
+		width:40px;
+		.line {
+			position:absolute;
+			height:100%;
+			border-right:2px  #2E353B solid;
+			padding-left:15px;
+			padding-top:15px;
+			z-index:1;
+		}
+	}
+	.menu-icon {
+		position:absolute;
+		border: 2px solid #2E353B;
+		border-radius:50%;
+		height: 30px;
+		width: 30px;
+		background-color: #161F26;
+		padding-top:6px;
+		z-index:2;
+		
+		.icon-bar {
+			background-color: $orange;
+		    width: 12px;
+		    height: 2px;
+		    border-radius: 3px;
+		    margin: 2px;
+		    margin-left: 7px;
+		}
+	}
 }
 
 .left-panel {
@@ -40,6 +198,11 @@ $orange: #F29418;
 
 body {
 	background-color: #463A6C;
+	font-family: 'Libre Baskerville', serif;
+}
+
+body, html, .container-fluid {
+  height: 100%;
 }
 
 .row {
@@ -51,4 +214,10 @@ body {
 
 .orange{
 	background-color: #F29418;
+}
+
+@media (max-width: 1000px) {
+  .page-content {
+    height: 1000px;
+  }
 }

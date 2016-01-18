@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+	
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<script src="https://rawgit.com/angular/bower-angular-resource/master/angular-resource.min.js"></script>
-	<script src="https://rawgit.com/angular/bower-angular/master/angular.min.js"></script>
+	
 	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script src="https://rawgit.com/angular/bower-angular/master/angular.min.js"></script>
+	<script src="https://rawgit.com/angular/bower-angular-resource/master/angular-resource.min.js"></script>
+	<script src="https://cdn.rawgit.com/showdownjs/showdown/master/dist/showdown.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -14,7 +18,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="Main">
 
 <%= yield %>
 
