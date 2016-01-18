@@ -23,13 +23,6 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: my_db_name
+  database:  <%= ENV["DATABASE_NAME "] %>
   username: root
   password: my_password
-  host: 127.0.0.1
-  port: 3306
-  flags:
-    - -COMPRESS
-    - FOUND_ROWS
-    - MULTI_STATEMENTS
-  secure_auth: false
