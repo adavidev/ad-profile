@@ -20,7 +20,7 @@ ctrl = app.controller("MainController", [
             ).length > 0;
     ]);
 
-app.filter('html', ($sce)->
+app.filter('html', ["$sce", ($sce)->
     return (val)->
         return $sce.trustAsHtml(val);
-)
+])
