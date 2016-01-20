@@ -38,7 +38,11 @@ gem "redcarpet"
 
 # Use Unicorn as the app server
 gem 'unicorn'
-gem "mysql2"
+# gem "mysql2"
+
+# HEEEERRRRRROOOOOKUUUUUU
+gem 'pg'
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
