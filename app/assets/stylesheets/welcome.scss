@@ -218,6 +218,9 @@ body, html, .container-fluid {
 
 @media (max-width: 1000px) {
   .page-content {
-    height: 1000px;
+    min-height: 1000px;
+  }
+  body .primary-panel .article {
+  	padding:0 20px;
   }
 }
