@@ -1,0 +1,37 @@
+.row
+    .col-sm-8.left-panel
+    	.header-stuff
+    	.page-content
+    		.article
+    			.title 
+        			| {{selected_post.name}}
+        		.name 
+        			| by {{selected_post.formatted_name}}
+        			span<
+        				| {{selected_post.created | date : shortDate}}
+        		.fulltext{ng-bind-html="selected_post.formatted_fulltext | html"}
+    		
+    .col-sm-4.right-panel
+    	.container-fluid
+        	.row
+        		.col-xs-1.timeline
+        			.menu-icon
+        				.icon-bar
+        				.icon-bar
+        				.icon-bar
+        			.line
+        		.col-xs-10
+        			.col-title Featured Articles
+        			.post {ng-repeat="post in posts", ng-class="{selected : (selected_post == post)}"}
+    		    		.timeline-dot {ng-class="{old : (oldPost(post))}"}
+    		    			.timeline-inner
+    		    		.selectable-thing {ng-click="select(post)"}
+    			    		.title 
+    			    			| {{post.name}}
+    			    		.hidden-xs.hidden-sm
+    				    		.description 
+    				    			| {{post.summary}}
+    				    		.name 
+    				    			| by {{post.formatted_name}}
+    				    			span<
+    				    				| {{post.created | date : shortDate}}

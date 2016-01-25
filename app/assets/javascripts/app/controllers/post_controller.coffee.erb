@@ -1,4 +1,17 @@
-ctrl = app.controller("MainController", [
+#= depend_on_asset "posts.html"
+
+app.config( ($routeProvider) ->
+    $routeProvider
+        .when('/', {
+            controller: 'PostsController'
+            templateUrl: '<%= asset_path("posts.html") %>'
+        })
+        .otherwise({
+            redirectTo:'/'
+        })
+)
+
+app.controller("PostsController", [
     "$scope",
     "$resource",
     "$sce",

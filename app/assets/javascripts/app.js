@@ -1,1 +1,1 @@
-app = angular.module('Main', ['ngResource']);
+app = angular.module('Main', ['ngResource', 'ngRoute']);
